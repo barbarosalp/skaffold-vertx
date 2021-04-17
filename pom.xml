@@ -126,6 +126,8 @@
                         </tags>
                     </to>
                     <container>
+                        <jvmFlags>-XX:+UseContainerSupport</jvmFlags>
+                        <jvmFlags>-XshowSettings:vm</jvmFlags>
                         <mainClass>com.barb.backend.Application</mainClass>
                         <format>OCI</format>
                     </container>

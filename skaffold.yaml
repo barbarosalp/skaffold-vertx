@@ -27,4 +27,5 @@ deploy:
         chartPath: ./helm/hello-vertx-backend
         artifactOverrides:
           image: hello-vertx-backend
-
+        valuesFiles:
+          - ./helm/development-values.yaml

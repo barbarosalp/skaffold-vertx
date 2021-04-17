@@ -33,6 +33,6 @@ public class HttpVerticle extends AbstractVerticle {
         final HttpServerResponse response = routingContext.response();
         response
                 .putHeader("content-type", "text/plain")
-                .end("App is running just fine...");
+                .end("App is running just fe...");
     }
 }
