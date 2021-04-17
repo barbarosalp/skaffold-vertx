@@ -1,0 +1,30 @@
+apiVersion: skaffold/v2beta13
+kind: Config
+
+metadata:
+  name: "Hello Vertx Backend"
+
+build:
+  tagPolicy:
+    sha256: {}
+  local:
+    push: false
+  artifacts:
+    - image: hello-vertx-backend
+      context: ./
+      jib:
+        type: maven
+
+portForward:
+  - resourceType: service
+    resourceName: hello-vertx-backend
+    port: 8080
+
+deploy:
+  helm:
+    releases:
+      - name: hello-vertx-backend
+        chartPath: ./helm/hello-vertx-backend
+        artifactOverrides:
+          image: hello-vertx-backend
+
